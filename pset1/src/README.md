@@ -32,7 +32,7 @@ Add these properties to your class, create a constructor, create some accessors,
 
 Now we want to add some functionality to our Student class. Add the following methods:
 
-**`toString()`** - returns the students full name and student ID
+**`toString()`** - returnsnd student ID
 
 **`getClassStanding()`** - returns the students class standing based on how many credits they have:
 
@@ -45,7 +45,7 @@ Now we want to add some functionality to our Student class. Add the following me
 
 Take the number of credits for a course and multiply it by the grade for that course. This is called the quality score. GPA is computed as the sum of all of the quality scores for each course the student has taken, divided by the total number of credits.
 
-**`computeTuition()`** - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and come up with a strategy to handle any "leftover" credits.
+**`computeTuition()`** - this method returns the students full name a the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and come up with a strategy to handle any "leftover" credits.
 
 **`createLegacy()`** - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take a Student object as a parameter then create a new Student object based on the following criteria:
 
