@@ -7,11 +7,11 @@ import junit.framework.TestCase;
 import java.io.PrintStream;
 
 /**
- * JUnit tests for Student and Course
+ * JUnit tests for Student, Course and Person
  * @author dshook
  *
  */
-public class StudentAndCourseTest extends TestCase {
+public class StudentCourseTest extends TestCase {
 	@Test
 	public void testStudentInit() {
 		Student s = new Student("Doug", "Shook", 111111);
@@ -73,6 +73,17 @@ public class StudentAndCourseTest extends TestCase {
 		a.addStudent(b);
 		double avgGPA = a.averageGPA();
 		System.out.println(avgGPA);
+	}
+
+	@Test
+	public void testPerson(){
+		Person i = new Person("Male", 36, 1123, "Instructor");
+		assertEquals("Male", i.getSex());
+		assertEquals("Female", i.changeSex("Female"));
+		assertEquals(36, i.getAge());
+		assertEquals(1123, i.getBday());
+		i.changeOccupation("Preacher");
+		assertEquals("Preacher", i.getOccupation());
 	}
 
 }

@@ -1,14 +1,15 @@
 /**
  * Created by jenny on 4/29/15.
  */
-public class Student{
+public class Student extends Person{
     private String first;
     private String last;
     private int StudentID;
     private int credits;
     private double GPA;
 
-    public Student(String first, String last, int id, int credits, double GPA) {
+    public Student(String mfi, int age, int date, String first, String last, int id, int credits, double GPA) {
+        super(mfi, age, date, "Student");
         this.first = first;
         this.last = last;
         this.StudentID = id;
@@ -16,7 +17,8 @@ public class Student{
         this.GPA = GPA;
     }
 
-    public Student(String first, String last, int id) {
+    public Student(String mfi, int age, int date, String first, String last, int id) {
+        super(mfi, age, date, "Student");
         this.first = first;
         this.last = last;
         this.StudentID = id;
