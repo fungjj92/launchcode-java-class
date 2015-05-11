@@ -14,6 +14,13 @@ public class Person {
         this.occupation = job;
     }
 
+    public Person(String mfi, int num, int date) {
+        this.sex = mfi;
+        this.age = num;
+        this.birthdate = date;
+        this.occupation = "";
+    }
+
     //All getters
     public String getSex() {
         return this.sex;

@@ -7,26 +7,30 @@ public class Student extends Person{
     private int StudentID;
     private int credits;
     private double GPA;
+    private String studentType;
 
-    public Student(String mfi, int age, int date, String first, String last, int id, int credits, double GPA) {
+    public Student(String mfi, int age, int date, String first, String last, int id, int credits, double GPA, String type) {
         super(mfi, age, date, "Student");
         this.first = first;
         this.last = last;
         this.StudentID = id;
         this.credits = credits;
         this.GPA = GPA;
+        this.studentType = type;
     }
 
-    public Student(String mfi, int age, int date, String first, String last, int id) {
+    public Student(String mfi, int age, int date, String first, String last, int id, String type) {
         super(mfi, age, date, "Student");
         this.first = first;
         this.last = last;
         this.StudentID = id;
         this.credits = 0;
         this.GPA = 0.0;
+        this.studentType = type;
     }
 
     public Student(Student a, Student b) {
+        super("I", 0, 310, "Student");
         int maxCr = (a.getCredits() > b.getCredits())? a.getCredits() : b.getCredits();
         double avgGPA = (a.getGPA()+b.getGPA())/2;
         this.first = a.getName();
@@ -34,6 +38,7 @@ public class Student extends Person{
         this.StudentID= (int)(Math.random() * 500);
         this.credits = maxCr;
         this.GPA = avgGPA;
+        this.studentType = "Fulltime";
     }
 
     public double getGPA(){ return this.GPA; }
@@ -41,6 +46,13 @@ public class Student extends Person{
     public int getStudentID(){ return this.StudentID; }
 
     public int getCredits(){ return this.credits; }
+
+    public String getType(){ return this.studentType; }
+
+    public String changeType(String newType){
+        this.studentType = newType;
+        return this.studentType;
+    }
 
     public String getName(){
         String name = this.first + " " + this.last;
@@ -73,12 +85,18 @@ public class Student extends Person{
     }
 
     public double computeTuition(){
-        double numSemesters = (this.credits/15);
-        if (numSemesters >= 8) {
-            double tuition = 160000;
-            return tuition;
-        } else {
-            double tuition = numSemesters * 20000.00;
+        if(this.studentType == "Fulltime") {
+            double numSemesters = (this.credits / 15);
+            if (numSemesters >= 8) {
+                double tuition = 160000;
+                return tuition;
+            } else {
+                double tuition = numSemesters * 20000.00;
+                return tuition;
+            }
+        }
+        else{
+            double tuition = this.credits * 300;
             return tuition;
         }
     }
